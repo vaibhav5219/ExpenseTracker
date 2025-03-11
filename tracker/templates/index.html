@@ -31,7 +31,7 @@
       <li class="{% if transaction.isNegative %} minus {% else %} plus {% endif %}">
         {{ transaction.description }} 
         <span>{{ transaction.amount }}</span>
-        <a href="{% url 'deleteTransaction' transaction.uuid %}">
+        <a href="{% url 'delete-transaction' transaction.uuid %}">
           <button class="delete-btn" ><i class="fa fa-times"></i></button>
         </a>
       </li>

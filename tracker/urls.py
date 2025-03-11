@@ -3,5 +3,5 @@ from tracker.views import *
 
 urlpatterns = [
     path('', index, name="index"),
-    path('/delete-transaction/<uid>/', deleteTransaction, name="deleteTransaction"),
+    path('/delete-transaction/<uid>/', deleteTransaction, name="delete-transaction"),
 ]
