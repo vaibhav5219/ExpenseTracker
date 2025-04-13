@@ -5,6 +5,8 @@ from django.db.models import Q, Sum
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+import logging
+logger = logging.getLogger('__name__')
 
 def registration(request):
     if request.method == "POST":
@@ -32,6 +34,13 @@ def registration(request):
     return render(request, "register.html")
 
 def login_page(request):
+    logger.debug("This is a debug message")
+    logger.info("This is a info message")
+    logger.error("This is a error message")
+    logger.warning("This is a warning message")
+    logger.critical("This is a critical message")
+    
+    
     if request.method == "POST":
         username = request.POST.get('Username')
         email = request.POST.get('Email')

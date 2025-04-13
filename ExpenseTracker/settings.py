@@ -119,3 +119,25 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+''' Django Logging '''
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers":{
+        "console":{
+            "class": "logging.StreamHandler",
+        },
+        "file":{
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'error.log')
+        },
+    },
+    "root":{
+        "handlers": ["console", "file"],
+        "level": "DEBUG",
+    }
+}
